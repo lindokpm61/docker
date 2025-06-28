@@ -82,4 +82,7 @@ EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=30s --retries=5 \
     CMD wget --spider http://localhost:3000 || exit 1
 
+# 🚨 Explicitly unset any inherited ENTRYPOINT
+ENTRYPOINT []
+
 CMD ["/calcom/scripts/start.sh"]
